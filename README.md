@@ -19,7 +19,7 @@ FROM employee_demographics
 WHERE birth_date < '1985-01-01'
   AND gender = 'Male';
 Result Screenshot:
-![Where Gender Birthdate Results](results/where_gender_birthdate.png)
+
 
 
 Question: List employees ordered first by gender, then by age descending.
