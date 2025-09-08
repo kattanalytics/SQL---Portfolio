@@ -126,7 +126,7 @@ ORDER BY Population DESC;
 ```
 
 **Result Screenshot:**
-![Countries with Greater Population](results/Countries_with_greater_than_average_population.png)
+![Countries with Greater than Average Population](results/Countries_with_greater_than_average_population.png)
 
 ## 5. Classic Window Function with ROW_NUMBER
 
