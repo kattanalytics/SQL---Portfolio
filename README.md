@@ -20,7 +20,7 @@ WHERE birth_date < '1985-01-01'
   AND gender = 'Male';
 ```
 Result Screenshot:  
-![Result Screenshot](results/where_gender_birthdate.png)
+![Result Screenshot](employee/results/where_gender_birthdate.png)
 
 **Question:** List employees ordered first by gender, then by age descending.
 ```sql
@@ -29,7 +29,7 @@ FROM employee_demographics
 ORDER BY gender, age DESC;
 ```
 Result Screenshot:  
-![Result Screenshot](results/orderby_gender_age.png)
+![Result Screenshot](employee/results/orderby_gender_age.png)
 
 ---
 
@@ -42,7 +42,7 @@ FROM employee_demographics
 GROUP BY gender;
 ```
 Result Screenshot:  
-![Result Screenshot](results/groupby_gender_age.png)
+![Result Screenshot](employee/results/groupby_gender_age.png)
 
 **Question:** Which gender has an average age greater than 40?
 ```sql
@@ -52,7 +52,7 @@ GROUP BY gender
 HAVING AVG(age) > 40;
 ```
 Result Screenshot:  
-![Result Screenshot](results/having_avg_age.png)
+![Result Screenshot](employee/results/having_avg_age.png)
 
 ---
 
@@ -66,7 +66,7 @@ INNER JOIN employee_salary AS sal
     ON dem.employee_id = sal.employee_id;
 ```
 Result Screenshot:  
-![Result Screenshot](results/join_dem_salary.png)
+![Result Screenshot](employee/results/join_dem_salary.png)
 
 **Question:** List all salary records, even if the employee has no demographic data (RIGHT JOIN).
 ```sql
@@ -76,7 +76,7 @@ RIGHT JOIN employee_salary AS sal
     ON dem.employee_id = sal.employee_id;
 ```
 Result Screenshot:  
-![Result Screenshot](results/rightjoin_salary.png)
+![Result Screenshot](employee/results/rightjoin_salary.png)
 
 **Question:** Pair each employee with the next employee in the salary table (self-join).
 ```sql
@@ -89,7 +89,7 @@ JOIN employee_salary emp2
     ON emp1.employee_id + 1 = emp2.employee_id;
 ```
 Result Screenshot:  
-![Result Screenshot](results/selfjoin_salary.png)
+![Result Screenshot](employee/results/selfjoin_salary.png)
 
 ---
 
@@ -111,7 +111,7 @@ WHERE salary > 70000
 ORDER BY first_name, last_name;
 ```
 Result Screenshot:  
-![Result Screenshot](results/union_employees.png)
+![Result Screenshot](employee/results/union_employees.png)
 
 ---
 
@@ -128,7 +128,7 @@ SELECT first_name,
 FROM employee_demographics;
 ```
 Result Screenshot:  
-![Result Screenshot](results/stringfuncs_birthmonth.png)
+![Result Screenshot](employee/results/stringfuncs_birthmonth.png)
 
 ---
 
@@ -147,7 +147,7 @@ SELECT first_name, last_name, salary,
 FROM employee_salary;
 ```
 Result Screenshot:  
-![Result Screenshot](results/case_salary_bonus.png)
+![Result Screenshot](employee/results/case_salary_bonus.png)
 
 ---
 
@@ -163,7 +163,7 @@ FROM (
 ) AS Agg_table;
 ```
 Result Screenshot:  
-![Result Screenshot](results/subquery_maxage.png)
+![Result Screenshot](employee/results/subquery_maxage.png)
 
 ---
 
@@ -178,7 +178,7 @@ JOIN employee_salary sal
     ON dem.employee_id = sal.employee_id;
 ```
 Result Screenshot:  
-![Result Screenshot](results/windowfunc_salary_total.png)
+![Result Screenshot](employee/results/windowfunc_salary_total.png)
 
 **Question:** Rank employees within each gender by salary (row number, rank, dense rank).
 ```sql
@@ -191,7 +191,7 @@ JOIN employee_salary sal
     ON dem.employee_id = sal.employee_id;
 ```
 Result Screenshot:  
-![Result Screenshot](results/windowfunc_salary_rank.png)
+![Result Screenshot](employee/results/windowfunc_salary_rank.png)
 
 ---
 
@@ -210,7 +210,7 @@ SELECT *
 FROM CTE_Example;
 ```
 Result Screenshot:  
-![Result Screenshot](results/cte_salary_stats.png)
+![Result Screenshot](employee/results/cte_salary_stats.png)
 
 ---
 
@@ -227,7 +227,7 @@ SELECT *
 FROM salary_over_50k;
 ```
 Result Screenshot:  
-![Result Screenshot](results/temptable_salary50k.png)
+![Result Screenshot](employee/results/temptable_salary50k.png)
 
 ---
 
