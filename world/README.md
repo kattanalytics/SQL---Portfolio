@@ -1,8 +1,8 @@
 # SQL Portfolio – Kathryn Starkey
 ## World Dataset
 
-This section of my portfolio showcases a variety of SQL queries written and executed on the **World** dataset.  
-It demonstrates core SQL skills including filtering, joins, aggregation, window functions, and subqueries.
+The World dataset is a classic relational database containing information about countries, cities, languages, populations, and life expectancy. In this project, I use SQL to explore demographic and geographic questions such as the most spoken languages, life expectancy across continents, and the largest cities by population. These queries highlight skills in filtering, aggregation, subqueries, and window functions—essential techniques for extracting insights from structured data. This project also demonstrates how SQL can answer business-style questions from raw data, a key responsibility in data support and analytics roles.
+
 
 For each example, you’ll see:  
 - **The business-style question/problem**  
