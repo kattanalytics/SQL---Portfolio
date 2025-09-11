@@ -23,7 +23,7 @@ LIMIT 10;
 ```
 
 **Result Screenshot:**
-![Top 10 Customers by Total Sales](results/top_sales_by_customer_ss.png)
+![Top 10 Customers by Total Sales](sales/results/top_sales_by_customer_ss.png)
 
 
 ## 2. Aggregation
@@ -37,7 +37,7 @@ ORDER BY Total_Profit DESC;
 ```
 
 **Result Screenshot:**
-![Total Profit by Product Category](results/profit_by_category_ss.png)
+![Total Profit by Product Category](sales/results/profit_by_category_ss.png)
 
 ## 3. Date Functions
 
@@ -50,7 +50,7 @@ GROUP BY Month
 ORDER BY Month;
 ```
 **Result Screenshot:**
-![Monthly Sales Trend](results/monthly_sales_trends_ss.png)
+![Monthly Sales Trend](sales/results/monthly_sales_trends_ss.png)
 
 ## 4. Subquery
 **Question:** What are the Top 5 Products by Quantity sold?
@@ -67,7 +67,7 @@ WHERE rn <= 5;
 ```
 
 **Result Screenshot:**
-![Top 5 Products by Quantity Sold](results/top_5_products_by_quantity_sold_ss.png)
+![Top 5 Products by Quantity Sold](sales/results/top_5_products_by_quantity_sold_ss.png)
 
 ## 5. Aggregation with Grouping
 
@@ -81,7 +81,7 @@ ORDER BY  Total_Profit ASC;
 ```
 
 **Result Screenshot:**
-![Regions with Negative Profit](results/regions_with_negative_profit_ss.png)
+![Regions with Negative Profit](sales/results/regions_with_negative_profit_ss.png)
 
 ## 6. Window Function (ROW_NUMBER)
 
@@ -109,4 +109,4 @@ ORDER BY Region, rn;
 ```
 
 **Result Screenshot:**
-![Top 3 Customers By Total Sales in each Region](results/top_3_customers_by_total_sales_in_each_region_ss.png)
+![Top 3 Customers By Total Sales in each Region](sales/results/top_3_customers_by_total_sales_in_each_region_ss.png)
