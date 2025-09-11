@@ -110,3 +110,13 @@ ORDER BY Region, rn;
 
 **Result Screenshot:**
 ![Top 3 Customers By Total Sales in each Region](sales/results/top_3_customers_by_total_sales_in_each_region_ss.png)
+
+
+
+---
+
+## Explore More SQL Projects  
+
+- [Employee Database](employee/README.md)  
+- [World Database](world/README.md)
+  
