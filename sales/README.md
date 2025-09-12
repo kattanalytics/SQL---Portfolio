@@ -2,7 +2,37 @@
 ## Sales (Superstore) Dataset  
 
 The Superstore Sales dataset is a retail dataset widely used in analytics practice. This project demonstrates how I use SQL to answer real-world business questions such as sales trends, profitability by category, and customer segmentation. By applying filtering, aggregations, subqueries, date functions, and window functions, I show the ability to transform raw transactional data into insights. These are the same skills that support monitoring and troubleshooting in a data warehouse environment, where performance, accuracy, and timely insights are critical.
- 
+
+## Data Import Process
+
+Documenting the import process ensures the dataset can be reloaded consistently, 
+which is important for data reliability and reproducibility in real-world analytics workflows.
+
+For practice, I documented two ways to load the dataset into MySQL:
+
+**Option 1 – Import Wizard:**  
+Used MySQL Workbench’s *Table Data Import Wizard* to quickly load `SampleSuperstore.csv`.
+
+**Option 2 – SQL Script (for reproducibility):**  
+Manually loaded the CSV into the `orders` table using `LOAD DATA INFILE`:
+
+```sql
+LOAD DATA LOCAL INFILE 'C:/Users/Kathryn/Documents/SampleSuperstore.csv'
+INTO TABLE orders
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+```
+IGNORE 1 ROWS → skips the header row.
+
+FIELDS TERMINATED BY ',' → handles the CSV format.
+
+ENCLOSED BY '"' → ensures text fields load correctly.
+
+---
+## Analysis/ Queries
+
 For each example, you’ll see:
 
 - **The business-style question/problem**  
