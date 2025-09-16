@@ -63,3 +63,52 @@ ORDER BY order_year;
 ```
 [View Results](results/yearly_sales_trends_p_db.csv)
 
+
+-  Customer Ranking by Total Sales    
+Business Question: Who are the top 10 customers by total sales, and how do they rank compared to others?
+```sql
+SELECT 
+    Customer_Name,
+    SUM(Sales) AS Total_Sales,
+    RANK() OVER (ORDER BY SUM(Sales) DESC) AS Sales_Rank
+FROM PORTFOLIO_DB.PUBLIC.SALES_SUPERSTORE
+GROUP BY Customer_Name
+ORDER BY Total_Sales DESC
+LIMIT 10;
+```
+📌 Demonstrates: Window functions (RANK()), aggregation, and ranking logic.
+
+[View Result](results/customer_ranking_p_db.csv)
+
+-  Monthly Sales Trend with Running Total     
+Business Question: What is the month-by-month sales trend, and how does the cumulative total grow over time?
+```sql
+SELECT
+    DATE_TRUNC('month', Order_Date) AS Order_Month,
+    SUM(Sales) AS Monthly_Sales,
+    SUM(SUM(Sales)) OVER (ORDER BY DATE_TRUNC('month', Order_Date)) AS Running_Total
+FROM PORTFOLIO_DB.PUBLIC.SALES_SUPERSTORE
+GROUP BY Order_Month
+ORDER BY Order_Month;
+```
+📌 Demonstrates: Date functions, aggregation, and windowed running totals.
+
+[View Result](results/monthly_sales_trend_p_db.csv)
+
+
+-  Profitability by Category + Product Level    
+  Business Question: Within each product category, which single product is the most profitable?
+```sql
+SELECT CATEGORY,
+       PRODUCT_NAME,
+       SUM(PROFIT) AS TOTAL_PROFIT
+FROM PORTFOLIO_DB.PUBLIC.SALES_SUPERSTORE
+GROUP BY CATEGORY, PRODUCT_NAME
+QUALIFY ROW_NUMBER() OVER (PARTITION BY CATEGORY ORDER BY SUM(PROFIT) DESC) = 1
+ORDER BY TOTAL_PROFIT DESC;
+```
+
+📌 Demonstrates: Window Functions + Partitioning   
+
+[View Result](profitability_by_category_plus_product_level_p_db.csv)
+
