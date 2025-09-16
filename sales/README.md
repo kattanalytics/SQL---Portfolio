@@ -141,4 +141,29 @@ ORDER BY Region, rn;
 **Result Screenshot:**
 ![Top 3 Customers By Total Sales in each Region](results/top_3_customers_by_total_sales_in_each_region_ss.png)
 
+---
+
+## Power BI Dashboard
+
+To complement the SQL analysis, I built an interactive Power BI dashboard using the Superstore dataset.  
+This dashboard highlights sales trends, profitability, and product performance with KPIs, filters, and visuals.
+
+### Dashboard Preview
+![Superstore Dashboard Overview](results/superstore_dashboard_full.png)
+This dashboard was built using the Superstore dataset to highlight both high-level KPIs and deeper business insights.
+Top row: KPI cards for Total Sales, Profit, Order Count, and Average Order Value, with slicers for Region, and Year.
+Middle row: Visuals showing Sales by Region and a Yearly Sales Trend Line chart for deeper analysis.
+Bottom row: A Top 10 Products chart and slicers for Region, and Year.
+The layout moves from at-a-glance performance (KPIs) → comparisons across sales amd products by regions and year → detailed insights (products and trends). This mirrors how business leaders consume information: big picture first, followed by details that explain the “why.”
+
+
+
+Additional screenshots:  
+![Top 10 Products](results/top_10_products_by_sales_.png)  
+
+![Sales by Region](results/sales_by_region.png) 
+
+
+
+
 
