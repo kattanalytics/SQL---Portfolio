@@ -148,7 +148,7 @@ ORDER BY Region, rn;
 To complement the SQL analysis, I built an interactive Power BI dashboard using the Superstore dataset.  
 This dashboard highlights sales trends, profitability, and product performance with KPIs, filters, and visuals.
 - Full dashboard screenshot (below)  
-- Download the `.pbix` file here: [Power BI File](powerbi/SuperstoreDataDashboard.pbix)
+- Download the `.pbix` file here: [Power BI File](powerbi/Superstore_Data_Dashboard.pbix)
 
 ### Dashboard Preview
 ![Superstore Dashboard Overview](results/superstore_dashboard_full.png)
