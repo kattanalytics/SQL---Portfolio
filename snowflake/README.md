@@ -112,6 +112,8 @@ ORDER BY TOTAL_PROFIT DESC;
 
 [View Result](profitability_by_category_plus_product_level_p_db.csv)
 
+---
+
 
 ## Azure Integration
 
@@ -125,7 +127,7 @@ This workflow highlights my ability to work with **cloud storage and data wareho
 
 ## 📊 Queries
 
-- Year-over-Year Sales Growth
+-  Year-Over-Year Sales Growth
   ```sql
   SELECT 
     YEAR(ORDER_DATE) AS YEAR,
@@ -138,6 +140,76 @@ This workflow highlights my ability to work with **cloud storage and data wareho
   FROM SUPERSTORE_RAW
   GROUP BY YEAR(ORDER_DATE)
   ORDER BY YEAR;
+  ```
+
+  📌 Shows growth % by year to highlight trend analysis
+
+[View Result](results/year_over_year_sales_growth_ss_a.csv)
+
+
+-  Top 10 Customers by Profit
+  ```sql
+SELECT 
+    CUSTOMER_NAME,
+    ROUND(SUM(PROFIT), 2) AS TOTAL_PROFIT
+FROM SUPERSTORE_RAW
+GROUP BY CUSTOMER_NAME
+ORDER BY TOTAL_PROFIT DESC
+LIMIT 10;
 ```
 
-📌 Demonstrates: growth % by year to highlight trend analysis
+ 📌 Demonstrates ability to drill down into customer-level profitability
+
+[View Result](results/top_10_customers_by_profit_ss_a.csv)
+
+
+-  Sales vs. Profit by Category
+  ```sql
+SELECT 
+    CATEGORY,
+    ROUND(SUM(SALES), 2) AS TOTAL_SALES,
+    ROUND(SUM(PROFIT), 2) AS TOTAL_PROFIT
+FROM SUPERSTORE_RAW
+GROUP BY CATEGORY
+ORDER BY TOTAL_SALES DESC;
+```
+
+ 📌 Highlights mismatch between sales volume and actual profit
+
+[View Result](results/sales_vs_profit_by_category_ss_a.csv)
+
+
+-  Monthly Sales Trend (for forecasting prep)
+  ```sql
+SELECT 
+    TO_CHAR(ORDER_DATE, 'YYYY-MM') AS YEAR_MONTH,
+    ROUND(SUM(SALES), 2) AS TOTAL_SALES
+FROM SUPERSTORE_RAW
+GROUP BY YEAR_MONTH
+ORDER BY YEAR_MONTH;
+```
+
+ 📌 Aggregate sales by month, set up time series for BI/forecasting
+
+[View Result](results/monthly_sales_trend(for_fc_prep)_ss_a.cvs)
+
+
+-  Regional Contribution to Total Sales
+  ```sql
+SELECT 
+    REGION,
+    ROUND(SUM(SALES), 2) AS TOTAL_SALES,
+    ROUND(
+        SUM(SALES) / SUM(SUM(SALES)) OVER () * 100, 
+        2
+    ) AS PERCENT_OF_TOTAL
+FROM SUPERSTORE_RAW
+GROUP BY REGION
+ORDER BY TOTAL_SALES DESC;
+```
+
+ 📌 Which region drives revenue? This is common in BI dashboards
+
+[View Result](results/regional_contribution_to_total_sales_ss_a.csv)
+
+
