@@ -29,10 +29,11 @@ HR-style dataset. Demonstrates filtering, subqueries, and reporting queries.
 
 ---
 
-## 🚀 Coming Soon  
-- **Power BI Dashboards** – Interactive visuals connected to SQL datasets  
-- **Snowflake Projects** – Data warehouse queries and monitoring  
-- **Azure Pipelines** – Practice building and scheduling data pipelines  
+### Extended Projects  
+
+- [Power BI Dashboards](./sales/powerbi) – Interactive visuals built on SQL datasets (Superstore example)  
+- [Snowflake Projects](./snowflake) – Data warehouse queries, staging with Azure, and monitoring  
+- Azure Pipelines – (In progress) Practice building and scheduling cloud data pipelines  
 
 ---
 
