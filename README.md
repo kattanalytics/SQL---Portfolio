@@ -29,7 +29,7 @@ HR-style dataset. Demonstrates filtering, subqueries, and reporting queries.
 
 ---
 
-### Extended Projects  
+## 📂 Extended Projects  
 
 - [Power BI Dashboards](./sales/powerbi) – Interactive visuals built on SQL datasets (Superstore example)  
 - [Snowflake Projects](./snowflake) – Data warehouse queries, staging with Azure, and monitoring  
