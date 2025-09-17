@@ -112,3 +112,32 @@ ORDER BY TOTAL_PROFIT DESC;
 
 [View Result](profitability_by_category_plus_product_level_p_db.csv)
 
+
+## Azure Integration
+
+This project demonstrates how Snowflake integrates with Microsoft Azure for cloud-based data workflows.  
+
+- **Staging**: A blob container was created in Azure Storage and connected to Snowflake using a secure SAS token. Files (Superstore dataset) were staged into Snowflake through this integration.  
+- **Loading**: Data from the staged files was loaded into a Snowflake table (`SUPERSTORE_RAW`) for analysis.  
+- **Validation**: Once loaded, the data was queried directly in Snowflake, confirming successful integration and accessibility.  
+
+This workflow highlights my ability to work with **cloud storage and data warehouses together**, preparing data for scalable analytics and pipeline automation.
+
+## 📊 Queries
+
+- Year-over-Year Sales Growth
+  ```sql
+  SELECT 
+    YEAR(ORDER_DATE) AS YEAR,
+    ROUND(SUM(SALES), 2) AS TOTAL_SALES,
+    ROUND(
+        (SUM(SALES) - LAG(SUM(SALES)) OVER (ORDER BY YEAR(ORDER_DATE))) 
+        / NULLIF(LAG(SUM(SALES)) OVER (ORDER BY YEAR(ORDER_DATE)), 0) * 100, 
+        2
+    ) AS YOY_GROWTH_PERCENT
+  FROM SUPERSTORE_RAW
+  GROUP BY YEAR(ORDER_DATE)
+  ORDER BY YEAR;
+```
+
+📌 Demonstrates: growth % by year to highlight trend analysis
