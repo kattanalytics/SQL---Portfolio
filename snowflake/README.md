@@ -213,3 +213,13 @@ ORDER BY TOTAL_SALES DESC;
 [View Result](results/regional_contribution_to_total_sales_ss_a.csv)
 
 
+---
+
+## Environment & Tools  
+
+- Developed and version-controlled in **VS Code + GitHub**  
+- Data modeling and queries executed in **Snowflake**  
+- Visualization created in **Power BI**  
+- Data staging and integration with **Azure Blob Storage**  
+
+---
